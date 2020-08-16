@@ -1,15 +1,55 @@
-<div id="header">
-        Ankit Bhargava <a href="https://www.linkedin.com/in/abharg/"> linkedin </a>
+<!DOCTYPE html>
+<html>
+
+<body>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="jquery.connections.js"></script>
+</head>
+
+<div id="menu" >
+	<div>
+		Ankit Bhargava
+	</div>
+	<div>
+		<a id="linkedin" href="https://www.linkedin.com/in/abharg/"><img src="images/linkedin.png"></a>
+	</div>
 </div>
 
-<div id="intro">
-	<p>Ankit Bhargava</p>
+<div id="content">
+	<div id="intro">
+		<p>Ankit Bhargava</p>
+	</div>
+
+	<div id="junction">
+		<p></p>
+	</div>
+
+	<div id="rcol">
+		<div id="experience">
+			<a href="bio.html">Experience</a>
+		</div>
+
+		<div id="projects">
+			<a href="code.html">Projects</a>
+		</div>
+
+		<div id="bio">
+			<a href="bio.html">Interests</a>
+		</div>
+	</div>
 </div>
 
-<div id="projects">
-	<a href="code.html">Projects</a>
-</div>
+<script>
+	jQuery(document).ready(function() {
+		jQuery('#content #junction').connections({ to: '#content #rcol #experience' });
+		jQuery('#content #junction').connections({ to: '#content #rcol #bio' });
+		jQuery('#content #junction').connections({ to: '#content #rcol #projects' });
+		jQuery('#content #intro').connections({ to: '#content #junction' });
+	});
+</script>
 
-<div id="Bio">
-	<a href="bio.html">More about me</a>
-</div>
+</body>
+
+</html>
